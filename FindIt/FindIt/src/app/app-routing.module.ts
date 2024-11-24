@@ -1,47 +1,48 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
-  },
-  {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'login',
     pathMatch: 'full'
   },
   {
-    path: 'find',
-    loadChildren: () => import('./pages/find/find.module').then( m => m.FindPageModule)
+    path: 'home', loadChildren: () => import('./pages/home/home.module').then( m => m.HomePageModule),
+    canActivate: [authGuard]
   },
   {
-    path: 'login',
-    loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+    path: 'report', loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule),
+    canActivate: [authGuard]
   },
   {
-    path: 'item-detail',
-    loadChildren: () => import('./pages/item-detail/item-detail.module').then( m => m.ItemDetailPageModule)
+    path: 'find', loadChildren: () => import('./pages/find/find.module').then( m => m.FindPageModule),
+    canActivate: [authGuard]
   },
   {
-    path: 'not-found',
-    loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
+    path: 'item/:id', loadChildren: () => import('./pages/item-detail/item-detail.module').then( m => m.ItemDetailPageModule),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'profile', loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule),
+    canActivate: [authGuard]
+  },
+  {
+    path: 'login', loadChildren: () => import('./pages/login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register', loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'not-found', loadChildren: () => import('./pages/not-found/not-found.module').then( m => m.NotFoundPageModule)
   },
   {
     path: 'openai',
     loadChildren: () => import('./pages/openai/openai.module').then( m => m.OpenaiPageModule)
   },
   {
-    path: 'register',
-    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'report',
-    loadChildren: () => import('./pages/report/report.module').then( m => m.ReportPageModule)
-  },
-  {
-    path: 'user-profile',
-    loadChildren: () => import('./pages/user-profile/user-profile.module').then( m => m.UserProfilePageModule)
+    path: '**', redirectTo: 'not-found'
   },
 ];
 
