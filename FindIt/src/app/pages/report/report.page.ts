@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavController } from '@ionic/angular';
 import { ProductService } from '../../services/product.service';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 import { defineCustomElements } from '@ionic/pwa-elements/loader';
 defineCustomElements(window);

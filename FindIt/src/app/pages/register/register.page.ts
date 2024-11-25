@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { NavController } from '@ionic/angular';
 import { User } from '../../models/user.model';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-register',

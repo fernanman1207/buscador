@@ -1,5 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
 import { Camera, CameraResultType, CameraSource } from '@capacitor/camera';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-image-uploader',

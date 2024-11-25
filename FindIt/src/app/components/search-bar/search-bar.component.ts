@@ -1,4 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-search-bar',

@@ -3,6 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NavController } from '@ionic/angular';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../models/product.model';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-item-detail',

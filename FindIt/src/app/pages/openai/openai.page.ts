@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { OpenaiService } from 'src/app/services/openai.service';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 
 @Component({

@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { NavController } from '@ionic/angular';
+import { IonRouterOutlet } from '@ionic/angular';
+
 
 @Component({
   selector: 'app-product-card',
